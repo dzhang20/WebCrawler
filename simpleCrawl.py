@@ -12,7 +12,6 @@ def web(page,WebUrl):
 
     while(page>0):
         #process the first url in todo list
-        print("round 1")
         if len(todo_lst) == 0:
             break
         start_time = time.time()
