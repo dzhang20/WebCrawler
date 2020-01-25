@@ -9,8 +9,8 @@ crawl_speed = []
 url_ratio = []
 def web(page,WebUrl):
     todo_lst.append(WebUrl)
-
-    while(page>0):
+    p = int(page)
+    while(p>0):
         #process the first url in todo list
         if len(todo_lst) == 0:
             break
@@ -43,13 +43,21 @@ def web(page,WebUrl):
         done_lst.append(url)
         crawl_speed.append(time.time() - start_time)
         url_ratio.append(len(todo_lst)/len(done_lst))
-        page = page - 1
+        p=p - 1
 
         
 #Starting URL: argv[1]
 web(sys.argv[1],sys.argv[2])
 
-for speed in crawl_speed:
-    print(speed)
-for url in url_ratio:
-    print(url)
+with open('crawl_speed.txt','w') as file:
+    for speed in crawl_speed:
+        file.write(str(speed))
+        file.write(" ")
+        print(speed)
+    file.close()
+with open('url_ratio.txt','w') as file:
+    for url in url_ratio:
+        file.write(str(url))
+        file.write(" ")
+        print(url)
+    file.close()
