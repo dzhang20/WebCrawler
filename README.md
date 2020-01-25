@@ -4,6 +4,8 @@ A Simple Web Crawler Program using BeautifulSoup
 
 ## Usage
 > $python simpleCrawl.py {number_of_page_to_crawl} {seed_url}
+
+
 E.X.
 > $python simpleCrawl.py 1000 www.amazon.com
 ## Pros 
